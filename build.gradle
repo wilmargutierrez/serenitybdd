@@ -1,0 +1,37 @@
+apply plugin: 'java'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "net.serenity-bdd:serenity-gradle-plugin:$serenityVersion"
+        classpath "net.serenity-bdd:serenity-emailer:$serenityVersion"
+    }
+}
+
+dependencies {
+    testImplementation "junit:junit:4.12"
+    testImplementation "net.serenity-bdd:serenity-core:$serenityVersion"
+    testImplementation "net.serenity-bdd:serenity-junit:$serenityVersion"
+    testImplementation "org.slf4j:slf4j-simple:1.7.28"
+    testImplementation "org.seleniumhq.selenium:selenium-chrome-driver:$chromeDriverVersion"
+    testImplementation "org.seleniumhq.selenium:selenium-firefox-driver:$firefoxDriverVersion"
+    testImplementation "com.google.guava:guava:28.0-jre"
+}
+
+serenity {
+    reports = ["email"]
+}
+
+gradle.startParameter.continueOnFailure = true
+
+test.finalizedBy(aggregate)
