@@ -4,6 +4,7 @@ import herokuapp.steps.LoginSteps;
 import herokuapp.steps.SecureAreaSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.Manual;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Title;
 import org.junit.Test;
@@ -27,5 +28,11 @@ public class PositiveLoginTest {
         loginSteps.isOnTheHomePage();
         loginSteps.logsInAsTom();
         secureAreaSteps.logsOutOfSecureArea();
+    }
+
+    @Manual
+    @Test
+    public void thisIsAnExampleOfAManualTest() {
+        // TODO: Describe the steps needed to perform the manual test.
     }
 }

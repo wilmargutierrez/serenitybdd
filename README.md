@@ -1,5 +1,8 @@
 # Serenity BDD Workshop
 
+This is a simple Serenity BDD example project with two tests, prepared
+for an internal workshop in our Westernacher QA Team.
+
 ## Precondition
 
 In order to run this test on your machine please install the following software:
