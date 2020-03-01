@@ -14,7 +14,7 @@ buildscript {
 
     dependencies {
         classpath "net.serenity-bdd:serenity-gradle-plugin:$serenityVersion"
-        classpath "net.serenity-bdd:serenity-emailer:$serenityVersion"
+        //classpath "net.serenity-bdd:serenity-emailer:$serenityVersion"
     }
 }
 
@@ -28,9 +28,9 @@ dependencies {
     testImplementation "com.google.guava:guava:28.0-jre"
 }
 
-serenity {
-    reports = ["email"]
-}
+//serenity {
+//    reports = ["email"]
+//}
 
 gradle.startParameter.continueOnFailure = true
 
